@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+fieldset {
+    position: relative;
+    border-color: brown;
+    color: brown;
+    background: bisque;
+    display: flex;
+    max-width: 50%;
+    min-width: 500px;
+}
+
+fieldset legend{
+    color: brown;
+    font-size: 2em;
+}
+
+fieldset input{
+    padding: 3px 10px 3px 0;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: brown;
+    border: none;
+}
+
+fieldset form button {
+    position: absolute;
+    top: 74%;
+    left: 79%;
+    font-size: 1em;
+    padding: 5px 6%;
+    cursor: pointer;
+    color: bisque;
+    background-color: brown;
+    border: 0 none;
+    border-radius: 3%;
+}
+
+fieldset button:hover{
+    background-color: rgb(146, 43, 43);
+    color: rgb(212, 191, 164);
+    transition: 0.2s;
+}
+
+form {
+    height: 122.60px;
+}

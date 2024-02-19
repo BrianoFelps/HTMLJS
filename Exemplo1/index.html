@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Página de login</title>
+    </head>
+
+    <body>
+        <fieldset>
+            <legend>Faça seu Login</legend>
+            <form>
+                <input type="text" id="usuario" placeholder="Usuário"> <br>
+                <input type="password" id="senha" placeholder="Senha"> <br><br>
+                <button id="log" type="button" onclick="login()">Login</button>
+            </form>
+        </fieldset>
+
+        <script>
+            const userField = document.getElementById("usuario");
+            const passField = document.getElementById("senha");
+            // const logButton = document.getElementById("log");
+
+            const login = () => {
+                const username = userField.value; 
+                const password = passField.value;
+
+                if(username === 'Brian' && password === 'Brian21'){
+                    alert("As informações estão corretas!");
+
+                    // Redirecionamento
+                    window.location.href = "home.html"; 
+
+                } else {
+                    alert("As informações estão incorretas!")
+                }
+            }
+        </script>
+    </body>
+</html>
