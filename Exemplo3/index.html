@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOC3</title>
+    </head>
+    <body>
+        <input type="text" id="selector" placeholder="Digite a tag html da página"> <br>
+        <input type="text" id="color" placeholder="Digite a nova cor da tag html"> <br>
+        <input type="text" id="espec" placeholder="Digite os atributos da estilização" style="width: 300px;"> <br> <br>
+        <select id="dropDown">
+            <option value="opt1">Cor da fonte</option>
+            <option value="opt2">Cor de fundo</option>
+            <option value="opt3">Border radius</option>
+            <option value="opt4">Padding</option>
+            <option value="opt5">Margin</option>
+            <option value="opt6">Border</option>
+        </select> 
+        <br><br>
+        <button style="cursor: pointer" onclick="getElement()">Mudar a propriedade</button>
+
+        <h1>A</h1>
+        <h1>B</h1>
+        <h1>C</h1>
+
+        <H2>D</H2>
+        <H2>E</H2>
+        <H2>F</H2>
+
+        <script>
+            //Referenciação de inputs
+            const selectorF = document.getElementById("selector");
+            const colorF = document.getElementById("color");
+            const especF = document.getElementById("espec");
+
+
+            const getElement = () =>{
+                const elements = document.querySelectorAll(selectorF.value);
+
+                const dropDown = document.getElementById("dropDown");
+                
+                    if (elements.length > 0) {
+                        elements.forEach((element) => {
+                            if (dropDown.selectedIndex > 1) {
+                                especF.style.visibility = "visible";
+                                colorF.style.visibility = "hidden";
+                            
+                            if (dropDown.selectedIndex === 2){
+                                element.style.borderRadius = especF.value;
+                            }else if (dropDown.selectedIndex === 3){
+                                element.style.padding = especF.value;
+                            }else if (dropDown.selectedIndex === 4){
+                                element.style.margin = especF.value;
+                            }else if (dropDown.selectedIndex === 5){
+                                element.style.border = especF.value;
+                            }
+                        }else{
+                            colorF.style.visibility = "visible";
+                            especF.style.visibility = "hidden";
+                        }
+                        })
+                    }else{
+                        alert("A página não possui nenhum " + selectorF.value)
+                    }
+
+                    if (elements.length > 0) {
+                        elements.forEach((element) => {
+                            if (dropDown.selectedIndex === 0){
+                                element.style.color = colorF.value;
+                            }else if (dropDown.selectedIndex === 1){
+                                element.style.background = colorF.value;
+                            }
+                        })
+                    }else{
+                        alert("A página não possui nenhum " + selectorF.value)
+                    }
+            }
+        </script>
+    </body>
+</html>
