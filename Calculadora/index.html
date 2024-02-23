@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Calculadora online</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="calc" class="calculator">
+                <input type="text" id="resArea">
+                <div id="buttons">
+                    <div class="buttonsStandard">
+                        <div id="ac" class="buttonSimbol" onclick="acClick()">
+                            <button>AC</button>
+                        </div>
+                        <div id="delete" class="buttonSimbol">
+                            <button>DEL</button>
+                        </div>
+                        <div id="percent" class="buttonSimbol" onclick="percentClick()">
+                            <button>%</button>
+                        </div>
+                        <div id="division" class="buttonSimbol" onclick="divisionClick()">
+                            <button>÷</button>
+                        </div>
+                        <div id="one" class="button" onclick="numOneClick()">
+                            <button>1</button>
+                        </div>
+                        <div id="two" class="button" onclick="numTwoClick()">
+                            <button>2</button>
+                        </div>
+                        <div id="three" class="button" onclick="numThreeClick()">
+                            <button>3</button>
+                        </div>
+                        <div id="mult" class="buttonSimbol" onclick="timesClick()">
+                            <button>x</button>
+                        </div>
+                        <div id="four" class="button" onclick="numFourClick()">
+                            <button>4</button>
+                        </div>
+                        <div id="five" class="button" onclick="numFiveClick()">
+                            <button>5</button>
+                        </div>
+                        <div id="six" class="button" onclick="numSixClick()">
+                            <button>6</button>
+                        </div>
+                        <div id="minus" class="buttonSimbol" onclick="minusClick()">
+                            <button>-</button>
+                        </div>
+                        <div id="seven" class="button" onclick="numSevenClick()">
+                            <button>7</button>
+                        </div>
+                        <div id="eight" class="button" onclick="numEightClick()">
+                            <button>8</button>
+                        </div>
+                        <div id="nine" class="button" onclick="numNineClick()">
+                            <button>9</button>
+                        </div>
+                        <div id="sum" class="buttonSimbol" onclick="sumClick()">
+                            <button>+</button>
+                        </div>
+                        <div id="sci" class="buttonSimbol" onclick="sciClick()">
+                            <button>SCI</button>
+                        </div>
+                        <div id="zero" class="button" onclick="numZeroClick()">
+                            <button>0</button>
+                        </div>
+                        <div id="comma" class="button" onclick="commaClick()">
+                            <button>,</button>
+                        </div>
+                        <div id="result" class="buttonSimbol" onclick="resClick()">
+                            <button>=</button>
+                        </div>
+                        
+                    </div>
+                    <!-- Fim standard -->
+                    <div id="buttonsSci" class="buttonsSci">
+                        <div id="parenthesisOpen" class="button" onclick="parOpenClick()">
+                            <button>&#40</button>
+                        </div>
+                        <div id="parenthesisClose" class="button" onclick="parCloseClick()">
+                            <button>&#41</button>
+                        </div>
+                        <div id="sen" class="button">
+                            <button>Sen</button>
+                        </div>
+                        <div id="cos" class="button">
+                            <button>Cos</button>
+                        </div>
+                        <div id="tan" class="button">
+                            <button>Tan</button>
+                        </div>
+                        <div id="deg" class="button">
+                            <button>Deg</button>
+                        </div>
+                        <div id="lg" class="button">
+                            <button>Lg</button>
+                        </div>
+                        <div id="ln" class="button">
+                            <button>Ln</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="JS/index.js"></script>
+    </body>
+</html>
