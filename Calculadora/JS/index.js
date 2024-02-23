@@ -90,7 +90,7 @@ const divisionClick = () => {
 
 const commaClick = () => {
     const button = document.getElementById("comma")
-    resultArea.value += button.textContent.trim();
+    resultArea.value += ".";
 }
 
 const parOpenClick = () => {
@@ -103,18 +103,35 @@ const parCloseClick = () => {
     resultArea.value += button.textContent.trim();
 }
 
-const percentClick = () => {
-    const button = document.getElementById("percent")
-    resultArea.value += button.textContent.trim();
+const percentClick = (num, num2) => {
+    num = resultArea.value[1];
+    num2 = resultArea.value[2];
+    const clearNum = parseFloat(num.replace('%', ''), num2.replace('%', ''));
+
+    if (!isNaN(clearNum)) {
+        const perc = clearNum / 100;
+        resultArea.value = perc;
+    } else {
+        resultArea.value = "Erro";
+    }
 }
 
 const resClick = () => {
-    const res = eval(resultArea.value);
-    resultArea.value = res;
+    var res = eval(resultArea.value);
+
+    if(resultArea.value.includes("%")){
+        resultArea.value = percentClick.result();
+    } else {
+        resultArea.value = res;
+    }
 }
 
 const acClick = () => {
     resultArea.value = "";
+}
+
+const delClick = () => {
+    resultArea.value = resultArea.value.slice(0, -1);
 }
 
 const sciClick = () => {
