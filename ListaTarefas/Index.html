@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Lista de tarefas</title>
+    </head>
+    <body>
+        <div id="container">
+
+            <div id="title">
+                <h1>Lista de tarefas</h1>
+            </div>
+
+            <div id="toDoListInput">
+                <input type="text" id="newTask" placeholder="Adicionar tarefa">
+                <button onclick="addTask()">
+                    <p> + </p>
+                </button>
+            </div>
+
+            <!-- Lista de tarefas -->
+            <div id="toDoListItems">
+                <ul id="toDoList">
+                </ul>
+            </div>
+
+            <!-- Modal = -->
+            <div id="modalContainer" class="modalContainer">
+            </div>
+            <!-- Janela aberta com prioridade, geralmente usada para criar mensagens de alerta -->
+            <div id="modalOverlay" class="modalOverlay">
+            </div>
+
+        </div>
+        <!-- Fim container-->
+        <script src="JS/index.js"></script>
+    </body>
+</html>
