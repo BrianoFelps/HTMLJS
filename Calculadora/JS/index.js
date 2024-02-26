@@ -1,4 +1,6 @@
 const resultArea = document.getElementById("resArea");
+const buttonsSci = document.getElementById("buttonsSci");
+const calc = document.getElementById("calc")
 
 // 
 // Números
@@ -94,33 +96,73 @@ const commaClick = () => {
 }
 
 const parOpenClick = () => {
+    if(buttonsSci.style.opacity > 0){
     const button = document.getElementById("parenthesisOpen")
     resultArea.value += button.textContent.trim();
+    }
 }
 
 const parCloseClick = () => {
+    if(buttonsSci.style.opacity > 0){
     const button = document.getElementById("parenthesisClose")
+    resultArea.value += button.textContent.trim();
+    }
+}
+
+const percentClick = () => {
+    // Digitar o elemento "%"
+    const button = document.getElementById("percent");
     resultArea.value += button.textContent.trim();
 }
 
-const percentClick = (num, num2) => {
-    num = resultArea.value[1];
-    num2 = resultArea.value[2];
-    const clearNum = parseFloat(num.replace('%', ''), num2.replace('%', ''));
+const calculateTrigonometric = (operation) => {
+    if(buttonsSci.style.opacity > 0){
+        const expression = resultArea.value;
+        const angle = parseFloat(expression);
 
-    if (!isNaN(clearNum)) {
-        const perc = clearNum / 100;
-        resultArea.value = perc;
-    } else {
-        resultArea.value = "Erro";
+        if (isNaN(angle)) {
+            resultArea.value = "Erro";
+            return;
+        }
+
+        let result;
+        switch (operation) {
+            case 'sin':
+                result = Math.sin(angle * (Math.PI / 180));
+                break;
+            case 'cos':
+                result = Math.cos(angle * (Math.PI / 180));
+                // Considerar valores muito próximos de zero como zero
+                if (Math.abs(result) < 1e-15) {
+                    result = 0;
+                }
+                break;
+            case 'tan':
+                result = Math.tan(angle * (Math.PI / 180));
+                // Verificar se tan é muito grande (considerar como indefinido)
+                if (Math.abs(result) > 1e15) {
+                    result = "Indefinido";
+                }
+                break;
+            default:
+                result = "Erro";
+        }
+
+        resultArea.value = result;
     }
 }
 
 const resClick = () => {
     var res = eval(resultArea.value);
+    const expression = resultArea.value;
 
-    if(resultArea.value.includes("%")){
-        resultArea.value = percentClick.result();
+    if (expression.includes("%")) {
+        // Se houver "%" na expressão, calcular a porcentagem
+        const [percent, num] = expression.split('%');
+        const percentage = parseFloat(percent);
+        const baseNumber = parseFloat(num);
+        const resPor = (percentage / 100) * baseNumber;
+        resultArea.value = resPor.toFixed(2);
     } else {
         resultArea.value = res;
     }
