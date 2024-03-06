@@ -8,7 +8,7 @@ document.getElementById("modalContainer").innerHTML =
             <p>Não é possível adicionar uma nova tarefa sem a descrição dela presente!</p>
         </div>
         <div class="button">
-            <button>
+            <button onclick="closeModal()">
                 OK
             </button>
         </div>
@@ -44,7 +44,7 @@ function addTask () {
                 </button>
             </div>
         </div> 
-        `
+         `
         ;
         newTask.value = "";
         toDoList.appendChild(newItem);
